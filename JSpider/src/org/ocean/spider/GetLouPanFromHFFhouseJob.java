@@ -18,7 +18,7 @@ import org.ocean.shibernate.SessionFactoryBuilder;
 import org.ocean.shibernate.TransactionalServiceHelper;
 import org.ocean.spider.entity.LouPan;
 
-public class GetLouPanJob {
+public class GetLouPanFromHFFhouseJob {
 
 	private static CommonDaoService service = null;
 	public static void main(String[] args) throws IOException{
@@ -34,7 +34,7 @@ public class GetLouPanJob {
 		settings.put("annotated.packages", "org.ocean.spider.entity");
 		SessionFactoryBuilder.applySettings(settings);
 		service  =TransactionalServiceHelper.getTransactionalService(CommonDaoService.class);
-		String nextPage = "http://newhouse.hf.house365.com/house/";
+		String nextPage = "http://newhouse.hfhouse.com/HouseList/index/";
 		do {
 			nextPage = collectPage(nextPage);
 		}while(nextPage!=null);
@@ -47,15 +47,16 @@ public class GetLouPanJob {
 		URLConnection conn = url.openConnection();
 		String result = IOUtils.toString(conn.getInputStream(),"gbk");
 		Document doc = Jsoup.parse(result);
-		Elements loupanList = doc.getElementsByAttributeValue("class", "fList clearfix");
+		Elements loupanList = doc.getElementsByAttributeValue("class", "loupan_list_none");
 		for(Element loupan : loupanList){
 			String name = loupan.child(1).child(0).child(0).text();
-			LouPan lp = service.getUniqueByKeyValue(LouPan.class, "name", name);
-			boolean isNew = false;
-			if(lp == null){
-				lp = new LouPan();
-				isNew = true;
-			}
+//			LouPan lp = service.getUniqueByKeyValue(LouPan.class, "name", name);
+			LouPan lp = new LouPan();
+//			boolean isNew = false;
+//			if(lp == null){
+//				lp = new LouPan();
+//				isNew = true;
+//			}
 			String link = loupan.child(1).child(0).child(0).attr("href");
 			if(link.startsWith("http://newhouse.hf.house365.com")){
 				link = link.replace("http://newhouse.hf.house365.com/", "");
@@ -86,10 +87,11 @@ public class GetLouPanJob {
 			}
 			lp.uid = UUID.randomUUID().toString();
 			lp.phoneNumber = phone;
-			if(isNew){
-				System.out.println("new houses found,"+lp);
-			}
-			service.saveOrUpdate(lp);
+			System.out.println(lp);
+//			if(isNew){
+//				System.out.println("new houses found,"+lp);
+//			}
+//			service.saveOrUpdate(lp);
 		}
 		
 		//find next page
