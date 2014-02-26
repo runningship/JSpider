@@ -77,11 +77,11 @@ public class GetLouPanJob {
 			if(!loupan.child(2).child(1).children().isEmpty()){
 				String price = loupan.child(2).child(1).child(0).text();
 				if(price!=null){
-					if(price.contains("-")){
-						lp.price = Integer.valueOf(price.split("-")[0]);
-					}else{
-						lp.price = Integer.valueOf(price);
-					}
+//					if(price.contains("-")){
+//						lp.price = Integer.valueOf(price.split("-")[0]);
+//					}else{
+//						lp.price = Integer.valueOf(price);
+//					}
 				}
 			}
 			lp.uid = UUID.randomUUID().toString();

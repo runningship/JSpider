@@ -12,14 +12,17 @@ public class LouPan {
 	public String name;
 	
 	public String pinyin;
+	
+	//详细信息连接，数据抓取用
+	public String link;
 	//区域
 	public String region;
 	
-	//楼盘类型
+	//楼盘类型,住宅，商业..
 	public String estateType;
 	
 	//均价
-	public int price;
+	public String price;
 	
 	//均价更新时间
 	public String priceUpdateTime;
