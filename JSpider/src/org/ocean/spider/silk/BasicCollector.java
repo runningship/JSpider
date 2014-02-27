@@ -2,17 +2,9 @@ package org.ocean.spider.silk;
 
 import org.jsoup.nodes.Element;
 
-public class BasicCollector{
+public abstract class BasicCollector{
 
-	protected String name;
-	
-	public BasicCollector(String name){
-		this.name = name;
-	}
-	
-	protected String getAttrName() {
-		return name;
-	}
+	protected abstract String getAttrName();
 
 	protected int[] getXPath() {
 		return new int[]{};

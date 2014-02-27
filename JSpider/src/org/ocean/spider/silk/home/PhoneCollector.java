@@ -1,13 +1,9 @@
-package org.ocean.spider.silk.list;
+package org.ocean.spider.silk.home;
 
 import org.jsoup.nodes.Element;
 import org.ocean.spider.silk.BasicCollector;
 
 public class PhoneCollector extends BasicCollector{
-
-	public PhoneCollector(String name) {
-		super(name);
-	}
 
 	@Override
 	public int[] getXPath() {
@@ -20,5 +16,10 @@ public class PhoneCollector extends BasicCollector{
 		String text = elem.text();
 		text = text.split("：")[1];
 		return text;
+	}
+	
+	@Override
+	protected String getAttrName() {
+		return "phoneNumber";
 	}
 }

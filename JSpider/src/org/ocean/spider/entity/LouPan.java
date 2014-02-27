@@ -14,7 +14,7 @@ public class LouPan {
 	public String pinyin;
 	
 	//详细信息连接，数据抓取用
-	public String link;
+	public String linkId;
 	//区域
 	public String region;
 	
@@ -154,4 +154,39 @@ public class LouPan {
 	
 	//其他配套
 	public String otherSupports;
+
+	@Override
+	public String toString() {
+		return "LouPan [uid=" + uid + ", name=" + name + ", pinyin=" + pinyin
+				+ ", linkId=" + linkId + ", region=" + region + ", estateType="
+				+ estateType + ", price=" + price + ", priceUpdateTime="
+				+ priceUpdateTime + ", houseType=" + houseType + ", address="
+				+ address + ", street=" + street + ", phoneNumber="
+				+ phoneNumber + ", label=" + label + ", state=" + state
+				+ ", longitude=" + longitude + ", latitude=" + latitude
+				+ ", salesDeptAddress=" + salesDeptAddress + ", floorHeight="
+				+ floorHeight + ", developer=" + developer + ", mainHouseType="
+				+ mainHouseType + ", buildingType=" + buildingType
+				+ ", estateProp=" + estateProp + ", schoolDistrict="
+				+ schoolDistrict + ", interest=" + interest + ", decoration="
+				+ decoration + ", preSalePermit=" + preSalePermit
+				+ ", interestBelongs=" + interestBelongs + ", floorArea="
+				+ floorArea + ", payment=" + payment + ", propertyCompany="
+				+ propertyCompany + ", propertyFee=" + propertyFee
+				+ ", carport=" + carport + ", traffic=" + traffic
+				+ ", investor=" + investor + ", startTime=" + startTime
+				+ ", agent=" + agent + ", totalArea=" + totalArea + ", pool="
+				+ pool + ", builder=" + builder + ", greeningRate="
+				+ greeningRate + ", volumeFraction=" + volumeFraction
+				+ ", buildingStyle=" + buildingStyle + ", fabric=" + fabric
+				+ ", wall=" + wall + ", door=" + door + ", window=" + window
+				+ ", heatSupply=" + heatSupply + ", gasSupply=" + gasSupply
+				+ ", waterSupply=" + waterSupply + ", elevator=" + elevator
+				+ ", deails=" + deails + ", schools=" + schools + ", markets="
+				+ markets + ", postOffices=" + postOffices + ", banks=" + banks
+				+ ", preSchools=" + preSchools + ", hospitals=" + hospitals
+				+ ", otherSupports=" + otherSupports + "]";
+	}
+	
+	
 }

@@ -5,10 +5,6 @@ import org.ocean.spider.silk.BasicCollector;
 
 public class StateCollector extends BasicCollector{
 
-	public StateCollector(String name) {
-		super(name);
-	}
-
 	@Override
 	public int[] getXPath() {
 		return new int[]{1,0,0,1,0};
@@ -20,5 +16,10 @@ public class StateCollector extends BasicCollector{
 		text = text.replace("(", "");
 		text = text.replace(")", "");
 		return text;
+	}
+	
+	@Override
+	protected String getAttrName() {
+		return "state";
 	}
 }

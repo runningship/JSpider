@@ -36,25 +36,25 @@ public class CollectorTest {
 	
 	@Test
 	public void testEstateNameCollector(){
-		EstateNameCollector enc = new EstateNameCollector("name");
+		EstateNameCollector enc = new EstateNameCollector();
 		Assert.assertEquals("中海滨湖公馆", enc.getAttrValue(elem));
 	}
 	
 	@Test
 	public void testEstateTypeCollector(){
-		EstateTypeCollector enc = new EstateTypeCollector("estateType");
+		EstateTypeCollector enc = new EstateTypeCollector();
 		Assert.assertEquals("住宅", enc.getAttrValue(elem));
 	}
 	
 	@Test
 	public void testRegionCollector(){
-		RegionCollector enc = new RegionCollector("region");
+		RegionCollector enc = new RegionCollector();
 		Assert.assertEquals("滨湖新区", enc.getAttrValue(elem));
 	}
 	
 	@Test
 	public void testStateCollector(){
-		StateCollector coll = new StateCollector("state");
+		StateCollector coll = new StateCollector();
 		System.out.println(coll.getAttrValue(elem));
 		Assert.assertNotNull(coll.getAttrValue(elem));
 	}
