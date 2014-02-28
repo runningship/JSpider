@@ -12,7 +12,7 @@ import org.ocean.spider.entity.LouPan;
 
 public class CollectorManager {
 
-	private List<BasicCollector> collectors = new ArrayList<BasicCollector>();
+	protected List<BasicCollector> collectors = new ArrayList<BasicCollector>();
 	
 	public void addCollector(BasicCollector collector){
 		collectors.add(collector);

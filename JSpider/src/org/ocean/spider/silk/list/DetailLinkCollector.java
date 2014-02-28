@@ -17,6 +17,6 @@ public class DetailLinkCollector extends BasicCollector{
 
 	@Override
 	protected String getAttrName() {
-		return "link";
+		return "linkId";
 	}
 }

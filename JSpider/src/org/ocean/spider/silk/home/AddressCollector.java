@@ -22,6 +22,12 @@ public class AddressCollector extends BasicCollector{
 		text = text.split("：")[1];
 		return text;
 	}
+	
+
+	@Override
+	protected String getMatchString() {
+		return "项目位置";
+	}
 
 	@Override
 	protected String getAttrName() {

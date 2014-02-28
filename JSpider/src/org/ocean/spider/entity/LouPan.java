@@ -53,9 +53,8 @@ public class LouPan {
 	
 	public float floorHeight;
 	
+	//开发商
 	public String developer;
-	
-	public String mainHouseType;
 	
 	//建筑类别，如高层，小高层，超高层
 	public String buildingType;
@@ -165,8 +164,7 @@ public class LouPan {
 				+ phoneNumber + ", label=" + label + ", state=" + state
 				+ ", longitude=" + longitude + ", latitude=" + latitude
 				+ ", salesDeptAddress=" + salesDeptAddress + ", floorHeight="
-				+ floorHeight + ", developer=" + developer + ", mainHouseType="
-				+ mainHouseType + ", buildingType=" + buildingType
+				+ floorHeight + ", developer=" + developer + ", buildingType=" + buildingType
 				+ ", estateProp=" + estateProp + ", schoolDistrict="
 				+ schoolDistrict + ", interest=" + interest + ", decoration="
 				+ decoration + ", preSalePermit=" + preSalePermit
