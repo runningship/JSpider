@@ -1,5 +1,7 @@
 package org.ocean.spider.entity;
 
+import java.lang.reflect.Field;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -51,7 +53,8 @@ public class LouPan {
 	//--------------------------
 	public String salesDeptAddress;
 	
-	public float floorHeight;
+	//层高
+	public String floorHeight;
 	
 	//开发商
 	public String developer;
@@ -70,6 +73,7 @@ public class LouPan {
 	
 	public String decoration;
 	
+	//预售许可证
 	public String preSalePermit;
 	
 	//产证归属
@@ -78,18 +82,22 @@ public class LouPan {
 	//占地面积
 	public String floorArea;
 	
+	//付款方式
 	public String payment;
 	
+	//物业公司
 	public String propertyCompany;
 	
-	public float propertyFee;
+	public String propertyFee;
 	
 	//车位
 	public String carport;
 	
+	//交通状况
 	public String traffic;
 	
 	//-------------------------
+	//投资商
 	public String investor;
 	
 	//开工时间
@@ -98,6 +106,7 @@ public class LouPan {
 	//代理公司
 	public String agent;
 	
+	//总建筑面积
 	public String totalArea;
 	
 	//公摊
@@ -107,7 +116,7 @@ public class LouPan {
 	public String builder;
 	
 	//绿化率
-	public float greeningRate;
+	public String greeningRate;
 	
 	//容积率
 	public float volumeFraction;
@@ -154,36 +163,27 @@ public class LouPan {
 	//其他配套
 	public String otherSupports;
 
+	public String updateTime;
+	
+	public String lastError;
 	@Override
 	public String toString() {
-		return "LouPan [uid=" + uid + ", name=" + name + ", pinyin=" + pinyin
-				+ ", linkId=" + linkId + ", region=" + region + ", estateType="
-				+ estateType + ", price=" + price + ", priceUpdateTime="
-				+ priceUpdateTime + ", houseType=" + houseType + ", address="
-				+ address + ", street=" + street + ", phoneNumber="
-				+ phoneNumber + ", label=" + label + ", state=" + state
-				+ ", longitude=" + longitude + ", latitude=" + latitude
-				+ ", salesDeptAddress=" + salesDeptAddress + ", floorHeight="
-				+ floorHeight + ", developer=" + developer + ", buildingType=" + buildingType
-				+ ", estateProp=" + estateProp + ", schoolDistrict="
-				+ schoolDistrict + ", interest=" + interest + ", decoration="
-				+ decoration + ", preSalePermit=" + preSalePermit
-				+ ", interestBelongs=" + interestBelongs + ", floorArea="
-				+ floorArea + ", payment=" + payment + ", propertyCompany="
-				+ propertyCompany + ", propertyFee=" + propertyFee
-				+ ", carport=" + carport + ", traffic=" + traffic
-				+ ", investor=" + investor + ", startTime=" + startTime
-				+ ", agent=" + agent + ", totalArea=" + totalArea + ", pool="
-				+ pool + ", builder=" + builder + ", greeningRate="
-				+ greeningRate + ", volumeFraction=" + volumeFraction
-				+ ", buildingStyle=" + buildingStyle + ", fabric=" + fabric
-				+ ", wall=" + wall + ", door=" + door + ", window=" + window
-				+ ", heatSupply=" + heatSupply + ", gasSupply=" + gasSupply
-				+ ", waterSupply=" + waterSupply + ", elevator=" + elevator
-				+ ", deails=" + deails + ", schools=" + schools + ", markets="
-				+ markets + ", postOffices=" + postOffices + ", banks=" + banks
-				+ ", preSchools=" + preSchools + ", hospitals=" + hospitals
-				+ ", otherSupports=" + otherSupports + "]";
+		StringBuilder sb = new StringBuilder();
+		for(Field f : this.getClass().getDeclaredFields()){
+			try {
+				Object value = f.get(this);
+				if(value==null){
+					continue;
+				}
+				sb.append(f.getName()+"="+value+",");
+			} catch (IllegalArgumentException e) {
+				//will never happen
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+		}
+		return sb.toString();
 	}
 	
 	

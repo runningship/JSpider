@@ -1,6 +1,5 @@
 package org.ocean.spider.silk;
 
-import org.jsoup.helper.StringUtil;
 import org.jsoup.nodes.Element;
 import org.ocean.spider.AException;
 import org.ocean.spider.ExceptionType;
@@ -38,9 +37,11 @@ public abstract class BasicCollector{
 		Element target = ElementFinder.findElementByMatchContent(root, getMatchString());
 		if(target == null){
 			int[] arr = getXPath();
-			target = root;
-			for(int i=0;i<arr.length;i++){
-				target = target.child(arr[i]);
+			if(arr!=null && arr.length>0){
+				target = root;
+				for(int i=0;i<arr.length;i++){
+					target = target.child(arr[i]);
+				}
 			}
 		}
 		if(target == null){
