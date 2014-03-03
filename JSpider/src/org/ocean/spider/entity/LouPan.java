@@ -45,10 +45,10 @@ public class LouPan {
 	public String state;
 	
 	//经度
-	public long longitude;
+	public float longitude;
 	
 	//纬度
-	public long latitude;
+	public float latitude;
 	
 	//--------------------------
 	public String salesDeptAddress;
@@ -88,6 +88,7 @@ public class LouPan {
 	//物业公司
 	public String propertyCompany;
 	
+	//物业费
 	public String propertyFee;
 	
 	//车位
@@ -133,24 +134,27 @@ public class LouPan {
 	
 	public String window;
 	
-	//public String other
 	//------------------------
-	public String heatSupply;
-	
-	public String gasSupply;
-	
-	public String waterSupply;
-	
-	public String elevator;
-	
-	public String deails;
+	//物业信息
+//	public String heatSupply;
+//	
+//	public String gasSupply;
+//	
+//	public String waterSupply;
+//	
+//	public String elevator;
+//	
+//	public String deails;
 	
 	//---------------
 	
+	//学校
 	public String schools;
 	
+	//商场
 	public String markets;
 	
+	//邮局
 	public String postOffices;
 	
 	public String banks;
@@ -166,6 +170,9 @@ public class LouPan {
 	public String updateTime;
 	
 	public String lastError;
+	
+	public boolean forceUpdate;
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();

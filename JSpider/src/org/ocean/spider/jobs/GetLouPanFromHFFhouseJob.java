@@ -25,7 +25,7 @@ public class GetLouPanFromHFFhouseJob {
 		DBUtil.init();
 		service  =TransactionalServiceHelper.getTransactionalService(CommonDaoService.class);
 		String hfshouse = "http://newhouse.hfhouse.com";
-		String nextPage = "/HouseList/index/?&p=112";
+		String nextPage = "/HouseList/index/";
 		manager.addAllDefaultCollectors();
 		do {
 			nextPage = collectPage(hfshouse+nextPage);
