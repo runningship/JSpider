@@ -64,7 +64,6 @@ public class GetHomePartInfoJob {
 		}catch(Exception ex){
 			loupan.lastError = ex.getMessage();
 		}
-		loupan.updateTime = DateUtil.getCurrentTimeInString();
 //		service.saveOrUpdate(loupan);
 //		System.out.println(loupan);
 	}

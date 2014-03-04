@@ -120,7 +120,7 @@ public class LouPan {
 	public String greeningRate;
 	
 	//容积率
-	public float volumeFraction;
+	public String volumeFraction;
 	
 	//建筑风格
 	public String buildingStyle;

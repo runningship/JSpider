@@ -33,7 +33,7 @@ public class GetLouPanFromHFFhouseJob {
 		DBUtil.init();
 		service  =TransactionalServiceHelper.getTransactionalService(CommonDaoService.class);
 		String hfshouse = "http://newhouse.hfhouse.com";
-		String nextPage = "/HouseList/index/?&p=112";
+		String nextPage = "/HouseList/index/";
 		manager.addAllDefaultCollectors();
 		do {
 			nextPage = collectPage(hfshouse+nextPage);
@@ -62,6 +62,7 @@ public class GetLouPanFromHFFhouseJob {
 			loupan.uid = UUID.randomUUID().toString();
 			manager.collect(root, loupan);
 			collect(loupan);
+			loupan.updateTime = DateUtil.getCurrentTimeInString();
 			System.out.println(loupan);
 			LouPan oldLoupan = service.getUniqueByKeyValue(LouPan.class, "name", loupan.name);
 			if(oldLoupan==null){

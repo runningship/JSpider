@@ -53,6 +53,5 @@ public class GetDetailPartInfoJob {
 		}catch(Exception ex){
 			loupan.lastError = ex.getMessage();
 		}
-		loupan.updateTime = DateUtil.getCurrentTimeInString();
 	}
 }
